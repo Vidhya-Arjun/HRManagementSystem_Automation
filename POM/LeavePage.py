@@ -50,7 +50,7 @@ class LeavePage(BasePage):
         self.wait.until(EC.url_contains("leave/assignLeave"))
 
     def fill_assign_leave_form(self):
-        self.type_text("employee_name_input_xpath", self.employee_name_input_xpath, "manda")
+        self.type_text("employee_name_input_xpath", self.employee_name_input_xpath, "user")
         self.click_element("employee_name_select_xpath", self.employee_name_select_xpath)
         self.click_element("leave_type_input_xpath", self.leave_type_input_xpath)
         self.click_element("leave_type_select_xpath", self.leave_type_select_xpath)

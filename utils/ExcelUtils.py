@@ -1,5 +1,13 @@
 from openpyxl import load_workbook
-filename = r"C:\Users\vidhy\project\HRManagementGuvi\TestData\testdata_user.xlsx"
+import os
+
+base_dir = os.getcwd()
+# TestData folder
+testdata_dir = os.path.join(base_dir, "TestData")
+# Create folder if not present
+os.makedirs(testdata_dir, exist_ok=True)
+# Excel file path
+excel_file = os.path.join(testdata_dir, "testdata.xlsx")
 
 
 def get_column_map(sheet):
@@ -15,7 +23,11 @@ def get_column_map(sheet):
 
 
 def read_data():
-    workbook = load_workbook(filename)
+    """
+    Read data from excel file and mapping each column reference against field validation
+    """
+
+    workbook = load_workbook(excel_file)
     sheet = workbook.active
 
     column_map = get_column_map(sheet)
