@@ -1,0 +1,6 @@
+selenium
+pytest
+openpyxl
+pytest-html
+pytest-selenium
+pyyaml
