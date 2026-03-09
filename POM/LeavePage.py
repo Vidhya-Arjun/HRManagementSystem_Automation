@@ -1,4 +1,4 @@
-import time
+
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,18 +14,11 @@ class LeavePage(BasePage):
         super().__init__(driver)
 
     leave_menu_xpath = "//ul[@class='oxd-main-menu']//span[normalize-space()='Leave']"
-    leave_mainmenu_list_xpath = "//div[@role='tab']/a[contains(@class,'orangehrm-tabs-item')]"
-    leavemenu_item_xpath = "//div[@role='tab']/a[contains(@class,'orangehrm-tabs-item') and normalize-space()='{}']"
     assign_leave_button_xpath = "//li[contains(@class,'oxd-topbar-body')]/a[contains(text(),'Assign Leave')]"
     employee_name_input_xpath = "//input[contains(@placeholder,'Type for hints')]"
     employee_name_select_xpath = "(//div[@role='option' and @class='oxd-autocomplete-option']/span)[1]"
     leave_type_input_xpath = "(//i[contains(@class,'select-text--arrow')])[1]"
     leave_type_select_xpath = "(//div[@role='option']//span[contains(text(),'CAN')])[1]"
-    from_date_input_xpath = "(//label[contains(text(),'From Date')]/following::input[@placeholder='yyyy-dd-mm'])[1]"
-    to_date_input_xpath = "(//label[contains(text(),'Date')]/following::input[@placeholder='yyyy-dd-mm'])[2]"
-    duration_input_xpath = "(//i[contains(@class,'select-text--arrow')])[2]"
-    duration_select_xpath = "//div[@role='option']//span[contains(text(),'Full Day')]"
-    comments_input_xpath = "//textarea[contains(@class,'textarea')]"
     assign_button_xpath = "//button[@type='submit']"
     confirm_leave_xpath = "//button[normalize-space()='Ok']"
     my_leave_page_xpath = "//a[normalize-space()='My Leave']"
@@ -70,7 +63,6 @@ class LeavePage(BasePage):
         self.click_element(
             "my_leave_calendar_to_date_xpath", self.my_leave_calendar_to_date_xpath)
         self.click_element("my_leave_to_date_xpath",self.my_leave_to_date_xpath)
-        time.sleep(3)
 
         self.click_element("search_button_xpath", self.search_button_xpath)
         record_text = self.retrieve_element_text("record_evaluation_xpath", self.record_evaluation_xpath)

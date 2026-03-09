@@ -14,55 +14,26 @@ class ClaimPage(BasePage):
         super().__init__(driver)
 
     Claim_menu_xpath = "//ul[@class='oxd-main-menu']//span[normalize-space()='Claim']"
-
     submit_claim_button_xpath = "//li[@class='oxd-topbar-body-nav-tab']/a[normalize-space()='Submit Claim']"
-
     event_select_xpath = "(//i[contains(@class, 'oxd-select-text--arrow')])[1]"
-
     select_event_xpath = "//div[@role='option']/span[normalize-space()='Accommodation']"
-
     Currency_select_xpath = "(//i[contains(@class, 'oxd-select-text--arrow')])[2]"
-
     currency_value_select_xpath = "//div[@role='option']/span[contains(text(),'India')]"
-
     remarks_input_xpath = "//div/textarea[contains(@class,'oxd-textarea')]"
-
     create_button_xpath = "//button[@type='submit']"
-
     Expenses_details_xpath = "(//button[@type='button' and normalize-space() = 'Add'])[1]"
-
     Expense_type_xpath = "//i[contains(@class,'oxd-select-text--arrow')]"
-
     Date_field_xpath = "//input[@placeholder='yyyy-dd-mm']"
-
     Amount_field_xpath = "//label[contains(@class,'oxd-input-field-required') and normalize-space()='Amount']/following::input[@class='oxd-input oxd-input--active']"
-
     Notes_field_nput_xpath = "//label[@class='oxd-label' and normalize-space() ='Note']/following::textarea"
-
     save_button_xpath = "//button[@type='submit']"
-
     to_ensure_record_creation_xpath = "//div[contains(@class,'orangehrm-horizontal-padding')]/span"
-
     EmployeeName_xpath = "(//label[normalize-space()='Employee Name']/following::input[@placeholder='Type for hints...'])[1]"
-
-    Event_selection_xpath = "(//i[contains(@class,'oxd-select-text--arrow')])[1]"
-
     myclaim_tab_xpath ="//li[@class='oxd-topbar-body-nav-tab']/a[normalize-space()='My Claims']"
-
-    Event_Name_xpath = "//div[@role='option']/span[normalize-space()='Accommodation']"
-
-    from_date_xpath = "(//label[normalize-space()='From Date']/following::input[@placeholder='yyyy-dd-mm'])[1]"
-
-    To_date_xpath = "//label[normalize-space()='To Date']/following::input[@placeholder='yyyy-dd-mm']"
-
     Reference_id_value_xpath = "//div[@class='oxd-autocomplete-option']/span"
-
     search_button_xpath = "//button[@type='submit']"
-
     Employee_claim_tab_click_xpath = "//a[@class='oxd-topbar-body-nav-tab-item' and normalize-space()='Employee Claims']"
-
     Reference_id_text_box_xpath = "(//input[contains(@placeholder,'Type for hints')])[2]"
-
     claim_id_reference_xpath = "(//div[@role='columnheader']/following::div[@role='cell' and contains(@class,'oxd-padding-cell')]/div)[1]"
 
     def initiate_claim(self):
@@ -75,7 +46,6 @@ class ClaimPage(BasePage):
 
     def create_claim_request(self):
         self.click_element("event_select_xpath", self.event_select_xpath)
-
         self.click_element("select_event_xpath", self.select_event_xpath)
         self.click_element("Currency_select_xpath", self.Currency_select_xpath)
         self.click_element("currency_value_select_xpath", self.currency_value_select_xpath)

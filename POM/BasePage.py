@@ -1,4 +1,3 @@
-from selenium.common import ElementNotInteractableException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -53,13 +52,17 @@ class BasePage:
         try:
             element = self.get_element(locator_name, locator_value)
             return element.is_displayed()
-        except:
+        except Exception as e:
+            # Log the full exception traceback so failures are visible in logs while preserving original behaviour
+            log.exception(f"is_element_visible: unexpected error while checking visibility for {locator_name}={locator_value}: {e}")
             return False
 
     def is_element_enabled(self,locator_name,locator_value):
         try:
             element = self.get_element(locator_name, locator_value)
             return element.is_enabled()
-        except:
+        except Exception as e:
+            # Log the full exception traceback so failures are visible in logs while preserving original behaviour
+            log.exception(f"is_element_enabled: unexpected error while checking enabled state for {locator_name}={locator_value}: {e}")
             return False
 

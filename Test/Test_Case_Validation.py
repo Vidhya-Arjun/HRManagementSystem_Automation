@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from POM.ClaimPage import ClaimPage
@@ -33,7 +31,7 @@ def test_login_with_multiple_credentials(driver,row,username,password,expected):
             login.click_logout_button()
         else:
             print(f"Row {row}: Valid login failed")
-            pytest.fail("Valid login should succeed")
+            pytest.fail(f"Row {row}: Valid login should succeed - current_url={driver.current_url!r}")
 
     # workflow to check the user is invalid and login is not permitted
 
@@ -46,7 +44,7 @@ def test_login_with_multiple_credentials(driver,row,username,password,expected):
         else:
             print(f"Row {row}: Invalid login not handled")
 
-            pytest.fail("Invalid login should show error message")
+            pytest.fail(f"Row {row}: Invalid login should show error message - current_url={driver.current_url!r}")
 
 def test_validate_presence_of_login_field(driver,config):
     # field validation
@@ -144,5 +142,4 @@ def test_validate_claim_creation_functionality(driver,config):
     claim.create_claim_request()
     claim.add_expense_details()
     assert claim.validate_claim_presence_in_employee_tab() is True
-
 
