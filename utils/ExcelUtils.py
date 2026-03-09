@@ -7,7 +7,7 @@ testdata_dir = os.path.join(base_dir, "TestData")
 # Create folder if not present
 os.makedirs(testdata_dir, exist_ok=True)
 # Excel file path
-excel_file = os.path.join(testdata_dir, "testdata.xlsx")
+excel_file = os.path.join(testdata_dir, "testdata_user.xlsx")
 
 
 def get_column_map(sheet):
