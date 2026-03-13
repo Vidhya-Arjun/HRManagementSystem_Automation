@@ -1,11 +1,7 @@
 import datetime
 
-import logger
 import pytest
 import yaml
-from selenium import webdriver
-
-from utils import driver_factory
 from utils.logger import get_logger
 from utils.driver_factory import get_driver
 import os

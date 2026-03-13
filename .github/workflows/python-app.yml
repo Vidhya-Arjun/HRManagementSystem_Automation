@@ -5,7 +5,7 @@ name: HR Management Automation Suite
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "feature/ci-build" ]
   pull_request:
     branches: [ "master" ]
 
