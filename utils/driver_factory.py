@@ -6,6 +6,7 @@ def get_driver(browser):
     if browser == "chrome":
         options = Options()
         options.add_argument("--incognito")
+        options.add_argument("--headless")
         return webdriver.Chrome(options=options)
     elif browser == "firefox":
         options = Options()
